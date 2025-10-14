@@ -295,12 +295,12 @@
         search.style.display = "flex";
         search.style.backgroundColor="rgba(255,255,255,0.5)" 
 
-        // Create the new button element
+
         var button = document.createElement("div");
         button.id = "gcd-button-control";
         button.className = "gcd-gl-btn fa fa-search search-button";
 
-        // Insert the button at the beginning of the search control
+
         search.insertBefore(button, search.firstChild);
         last = search.lastChild;
         last.style.display = "none";
@@ -317,23 +317,18 @@
             {label: "Google Hybrid", layer: layer_GoogleHybrid_1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
-            //namedToggle: true,
-            //selectorBack: false,
-            //closedSymbol: '&#8862; &#x1f5c0;',
-            //openedSymbol: '&#8863; &#x1f5c1;',
-            //collapseAll: 'Collapse all',
-            //expandAll: 'Expand all',
+
             collapsed: true,
         });
         lay.addTo(map);
         setBounds();
         
-        // Auto-reload timer - shows popup every 10 seconds
+       
         setInterval(function() {
             document.getElementById('admin-popup').classList.add('show');
         }, 10000); // 10 seconds
         
-        // Cancel button functionality
+        
         document.getElementById('cancel-button').addEventListener('click', function() {
             document.getElementById('admin-popup').classList.remove('show');
         });
